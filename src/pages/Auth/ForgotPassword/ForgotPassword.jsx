@@ -12,7 +12,7 @@ const ForgotPassword = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await api.post("/auth/forgot-password/", {
+      const response = await api.post("/forgot-password/", {
         email,
       });
       if (response.data.response === true) {

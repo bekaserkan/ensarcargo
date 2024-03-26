@@ -29,7 +29,7 @@ const Register = () => {
         confirm_password: inputData.confirm_password,
       };
       try {
-        const response = await api.post("/auth/register/", dataNew);
+        const response = await api.post("/register/", dataNew);
         if (response.data.response === true) {
           localStorage.setItem("email", inputData.email);
           navigate("/activation");

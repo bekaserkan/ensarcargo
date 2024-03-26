@@ -23,7 +23,7 @@ const Activation = () => {
     if (code.length == 6) {
       setLoading(true);
       try {
-        const response = await api.post("/auth/activation", {
+        const response = await api.post("/activation", {
           code,
           email: email,
         });
