@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
+/* Auth */
+
+.form {
+  margin: 60px auto;
+  width: 50%;
+  position: relative;
+  background: rgb(198, 215, 228);
+  border-radius: 24px;
+  padding: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login_form_head {
+  width: 100%;
+  padding-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input_box {
+  width: 100%;
+  height: 95px;
+  position: relative;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+}
+
+.text_center {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--black);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.text_gray {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text_gray);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.label_form {
+  color: var(--gray);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input_form {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--black);
+  border-radius: 8px;
+  padding: 13px 16px;
+  background: var(--input);
+  border: 1px solid var(--white);
+}
+
+.input_form::placeholder {
+  color: #afafaf;
+}
+
+.input_form:focus {
+  border: 1px solid var(--main);
+}
+
+.button_form {
+  border: none;
+  width: 100%;
+  height: 45px;
+  padding: 0 20px;
+  border-radius: 8px;
+  background: var(--main);
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.button_form.white {
+  color: var(--main);
+  background: transparent;
+  border: 1px solid var(--main);
+  box-shadow: none;
+}
+
+.span-icon {
+  z-index: 1;
+  position: absolute;
+  top: 38px;
+  right: 16px;
+  font-size: 20px;
+  color: var(--gray);
+  cursor: pointer;
+}
+
+.red {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--red);
+}
+
+.texting {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--black);
+}
+
+.text_link {
+  margin-left: 5px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--main);
 }
