@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { api } from "../../../Api";
+import Loading from "../../../UI/Loading/Loading";
 
 const Login = () => {
   const [visible, setVisible] = useState(false);
@@ -24,7 +25,6 @@ const Login = () => {
         const { token } = response.data;
         localStorage.setItem("token", token);
         navigate("/dashboard");
-        alert(response.data.message);
       } else {
         if (response.data.message) {
           alert(response.data.message, "error");
@@ -86,7 +86,7 @@ const Login = () => {
           onSubmit={handleSubmit}
           className="button_form"
         >
-          {loading ? "loading..." : "Войти"}
+          {loading ? <Loading white={true} /> : "Войти"}
         </button>
         <p className="texting">
           Ещё нет аккаунта?

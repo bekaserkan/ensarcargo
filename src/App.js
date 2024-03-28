@@ -7,6 +7,10 @@ import Login from "./pages/Auth/Login/Login";
 import Register from "./pages/Auth/Register/Register";
 import Activation from "./pages/Auth/Activation/Activation";
 import ForgotPassword from "./pages/Auth/ForgotPassword/ForgotPassword";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Tracking from "./pages/Tracking/Tracking";
+import { ALert } from "./UI/Alert/Alert";
 
 function App() {
   const location = useLocation();
@@ -18,11 +22,16 @@ function App() {
   const PrivateRoute = ({ element }) => {
     const token = localStorage.getItem("token");
 
-    return token ? element : <Navigate to="/login" replace />;
+    return token
+      ? element
+      : ALert("Войдите чтобы узнать больше!", "warning") || (
+          <Navigate to="/login" replace />
+        );
   };
 
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="login" element={<Login />} />
@@ -30,10 +39,15 @@ function App() {
         <Route path="activation" element={<Activation />} />
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route
-          path="/dashboard"
+          path="dashboard"
           element={<PrivateRoute element={<Dashboard />} />}
         />
+        <Route
+          path="tracking"
+          element={<PrivateRoute element={<Tracking />} />}
+        />
       </Routes>
+      <Footer />
     </div>
   );
 }

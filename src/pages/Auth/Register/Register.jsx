@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import { api } from "../../../Api";
+import Loading from "../../../UI/Loading/Loading";
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
@@ -23,17 +24,16 @@ const Register = () => {
     if (inputData.password === inputData.confirm_password) {
       const dataNew = {
         email: inputData.email,
-        first_name: inputData.first_name,
-        last_name: inputData.last_name,
+        full_name: inputData.first_name,
+        phone: inputData.last_name,
         password: inputData.password,
-        confirm_password: inputData.confirm_password,
+        password2: inputData.confirm_password,
       };
       try {
         const response = await api.post("/register/", dataNew);
         if (response.data.response === true) {
           localStorage.setItem("email", inputData.email);
           navigate("/activation");
-          alert(response.data.message);
           console.log(inputData.email);
         } else {
           if (response.data.message) {
@@ -59,7 +59,7 @@ const Register = () => {
           <span className="text_center">Регистрация</span>
         </div>
         <div className="input_box">
-          <label className="label_form">Логин</label>
+          <label className="label_form">ФИО</label>
           <input
             className="input_form"
             type="text"
@@ -71,16 +71,16 @@ const Register = () => {
               })
             }
             name="first_name"
-            placeholder="Латинскими буквами, цифрами"
+            placeholder="Имя и Фамилия"
             required
           />
           {error.first_name && <p className="red">{error.first_name}</p>}
         </div>
         <div className="input_box">
-          <label className="label_form">Имя</label>
+          <label className="label_form">Номер телефона</label>
           <input
             className="input_form"
-            type="text"
+            type="number"
             value={inputData.last_name}
             onChange={(e) =>
               setInputData({
@@ -89,7 +89,7 @@ const Register = () => {
               })
             }
             name="last_name"
-            placeholder="Видно всем участникам"
+            placeholder="Введите номер телефона"
             required
           />
           {error.last_name && <p className="red">{error.last_name}</p>}
@@ -157,7 +157,7 @@ const Register = () => {
           className="button_form"
           onSubmit={handleSubmit}
         >
-          {loading ? "loading..." : "Зарегистрироваться"}
+          {loading ? <Loading white={true} /> : "Зарегистрироваться"}
         </button>
         <p className="texting">
           Уже есть аккаунт ?{" "}

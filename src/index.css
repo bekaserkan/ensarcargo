@@ -60,11 +60,13 @@
 }
 
 :root {
-  --main: #1856cd;
+  --pod: #f4f4f4;
+  --main: #a00d25;
   --input: #f5f7fa;
   --text_gray: #5e5c5c;
   --gray: #8c8c8c;
   --black: #000;
   --white: #fff;
   --red: #ee0462;
+  --graysh: #969696;
 }

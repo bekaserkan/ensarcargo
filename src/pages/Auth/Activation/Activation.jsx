@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../Api";
+import Loading from "../../../UI/Loading/Loading";
 
 const Activation = () => {
   const [code, setCode] = useState("");
@@ -23,8 +24,8 @@ const Activation = () => {
     if (code.length == 6) {
       setLoading(true);
       try {
-        const response = await api.post("/activation", {
-          code,
+        const response = await api.post("/verify-email/", {
+          v_code: code,
           email: email,
         });
         if (response.data.response === true) {
@@ -71,7 +72,7 @@ const Activation = () => {
           onSubmit={fetchData}
           className="button_form"
         >
-          {loading ? "loading..." : "Подвердить"}
+          {loading ? <Loading white={true} /> : "Подвердить"}
         </button>
       </form>
     </div>

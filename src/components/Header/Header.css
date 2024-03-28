@@ -1,0 +1,137 @@
+.header {
+  width: 100%;
+  border-bottom: 1px solid var(--black);
+  background: var(--white);
+}
+
+.header .head {
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  width: 100px;
+  height: 65px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.header .flex {
+  display: flex;
+  align-items: center;
+}
+
+.header .text_div {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header .text {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.header .text .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.header .button_form {
+  width: unset;
+}
+
+.header .button_form.gray {
+  color: var(--gray);
+  font-weight: 500;
+  background: transparent;
+}
+
+.header .button_form.black {
+  background: var(--black);
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header .block {
+  display: none;
+}
+
+.header .none {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .header .block {
+    display: block;
+  }
+
+  .header .none {
+    display: none;
+  }
+
+  .header {
+    width: 100%;
+    border-bottom: 1px solid var(--black);
+    background: var(--white);
+  }
+
+  .header .head {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 16px 0;
+  }
+
+  .header .logo {
+    width: 100px;
+    height: 65px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .header .flex {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header .text_div {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black);
+  }
+
+  .header .text .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header .button_form {
+    width: unset;
+  }
+
+  .header .button_form.gray {
+    color: var(--gray);
+    font-weight: 500;
+    background: transparent;
+  }
+}

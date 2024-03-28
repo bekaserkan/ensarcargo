@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../Api";
+import Loading from "../../../UI/Loading/Loading";
 
 const ForgotPassword = () => {
   const [loading, setLoading] = useState(false);
@@ -17,7 +18,6 @@ const ForgotPassword = () => {
       });
       if (response.data.response === true) {
         localStorage.setItem("email", email);
-        alert(response.data.message, "success");
         navigate("/activation/verify");
       } else {
         if (response.data.message) {
@@ -61,7 +61,7 @@ const ForgotPassword = () => {
           onSubmit={handleSubmit}
           className="button_form"
         >
-          {loading ? "loading..." : "Получить код"}
+          {loading ? <Loading white={true} /> : "Получить код"}
         </button>
       </form>
     </div>
