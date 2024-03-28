@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Tracking.css";
 import { api } from "../../Api";
 import Loading from "../../UI/Loading/Loading";
+import { MdOutlineDateRange } from "react-icons/md";
+import { IoIosInformationCircleOutline } from "react-icons/io";
 
 const Tracking = () => {
   const [data, setData] = useState([]);
@@ -57,10 +59,25 @@ const Tracking = () => {
             {loading ? <Loading white={true} /> : "Отследить"}
           </button>
         </form>
-
         {data.date ? (
           <div className="div">
-            {data.date}, {data.info}
+            <div className="column">
+              <div className="flexing top">
+                <MdOutlineDateRange className="icon" />
+                <div>
+                  <h5>{data.date}</h5>
+                  <p>дата</p>
+                </div>
+              </div>
+              <div className="hr"></div>
+              <div className="flexing bottom">
+                <IoIosInformationCircleOutline className="icon" />
+                <div>
+                  <h5>{data.info}</h5>
+                  <p>информация</p>
+                </div>
+              </div>
+            </div>
           </div>
         ) : (
           <div className="div">

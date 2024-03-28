@@ -3,32 +3,21 @@ import "./Header.css";
 import logo from "../../img/logo.svg";
 import phone from "../../img/phone.svg";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { api } from "../../Api";
 import { IoMdTime } from "react-icons/io";
 
-const Header = () => {
-  const [time, setTime] = useState([]);
+const Header = ({ time }) => {
   const [local, setLocal] = useState("");
-  const navigate = useNavigate();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       setLocal(token);
+    } else {
+      setLocal("");
     }
   }, [location]);
-
-  useEffect(() => {
-    api
-      .get("work-time")
-      .then((response) => {
-        setTime(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
   function Logout() {
     navigate("/login");
@@ -47,7 +36,7 @@ const Header = () => {
             <div className="text_div">
               {" "}
               <img className="icon" src={phone} alt="" />{" "}
-              <p className="text">+996 502 800 202</p>
+              <p className="text">+996 707 353 164</p>
             </div>
             <div className="text_div">
               {" "}
@@ -60,7 +49,7 @@ const Header = () => {
               <div className="text_div">
                 {" "}
                 <img className="icon" src={phone} alt="" />{" "}
-                <p className="text">+996 502 800 202</p>
+                <p className="text">+996 707 353 164</p>
               </div>
               <div className="text_div">
                 {" "}

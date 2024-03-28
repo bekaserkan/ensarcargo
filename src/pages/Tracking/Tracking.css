@@ -5,15 +5,65 @@
 
 .tracking .div {
   margin-top: 30px;
-  text-align: center;
-  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.tracking .column {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border-radius: 15px;
+}
+
+.tracking .flexing {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.tracking .flexing.top {
+  padding-bottom: 10px;
+}
+
+.tracking .flexing.bottom {
+  padding-top: 10px;
+}
+
+.tracking .flexing h5 {
+  font-size: 17px;
   font-weight: 400;
   color: var(--black);
+}
+
+.tracking .icon {
+  font-size: 24px;
+  color: var(--main);
+}
+
+.tracking .hr {
+  width: 100%;
+  height: 1px;
+  background: rgb(0, 0, 0, 0.1);
+}
+
+.tracking .flexing p {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--gray);
 }
 
 @media (max-width: 600px) {
   .tracking {
     width: 100%;
     padding-bottom: 100px;
+  }
+
+  .tracking .flexing {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 }

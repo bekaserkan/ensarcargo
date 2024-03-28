@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Main from "./pages/Main/Main";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Auth/Login/Login";
@@ -11,9 +11,22 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Tracking from "./pages/Tracking/Tracking";
 import { ALert } from "./UI/Alert/Alert";
+import { api } from "./Api";
 
 function App() {
+  const [time, setTime] = useState([]);
   const location = useLocation();
+
+  useEffect(() => {
+    api
+      .get("work-time")
+      .then((response) => {
+        setTime(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -31,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header time={time} />
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="login" element={<Login />} />
@@ -42,12 +55,9 @@ function App() {
           path="dashboard"
           element={<PrivateRoute element={<Dashboard />} />}
         />
-        <Route
-          path="tracking"
-          element={<PrivateRoute element={<Tracking />} />}
-        />
+        <Route path="tracking" element={<Tracking />} />
       </Routes>
-      <Footer />
+      <Footer time={time} />
     </div>
   );
 }

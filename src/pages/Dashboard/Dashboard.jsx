@@ -75,7 +75,7 @@ const Dashboard = () => {
                   />
                 </div>
                 <div className="input_box">
-                  <label className="label_form">Трек код</label>
+                  <label className="label_form">Мой код</label>
                   <input
                     className="input_form"
                     value={user.code}
@@ -93,7 +93,7 @@ const Dashboard = () => {
                   <span className="text_first">Адреса</span>
                 </div>
                 <div className="input_box">
-                  <label className="label_form">Трек код</label>
+                  <label className="label_form">Почтовый индекс</label>
                   <input
                     className="input_form"
                     value={"18160860859"}
@@ -109,7 +109,7 @@ const Dashboard = () => {
                   </span>
                 </div>
                 <div className="input_box">
-                  <label className="label_form">Трек код</label>
+                  <label className="label_form">Город</label>
                   <input
                     className="input_form"
                     value={"浙江省 金华市 义乌市"}
@@ -125,7 +125,7 @@ const Dashboard = () => {
                   </span>
                 </div>
                 <div className="input_box">
-                  <label className="label_form">Трек код</label>
+                  <label className="label_form">Склад</label>
                   <input
                     className="input_form"
                     value={"下湾2区 6栋7号 107仓库"}

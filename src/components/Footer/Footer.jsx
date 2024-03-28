@@ -6,30 +6,34 @@ import icon3 from "../../img/соцсети (7).svg";
 import icon4 from "../../img/соцсети (8).svg";
 import logo from "../../img/logo_two.svg";
 
-const Footer = () => {
+const Footer = ({ time }) => {
   return (
     <>
       <div className="footer">
         <div className="container">
           <div className="foot">
             <div className="icons">
-              <a href="">
+              <a
+                target="blank"
+                href="https://api.whatsapp.com/send?phone=996707353164"
+              >
                 <img className="icon" src={icon1} alt="" />
               </a>
-              <a href="">
+              <a target="blank" href="https://t.me/+EtGwLThL-ORjZWNi">
                 <img className="icon" src={icon2} alt="" />
               </a>
-              <a href="">
+              <a target="blank" href="https://www.instagram.com/ensar.kargo/">
                 <img className="icon" src={icon3} alt="" />
               </a>
-              <a href="">
+              <a target="blank" href="https://www.tiktok.com/@ensar.kargo">
                 <img className="icon" src={icon4} alt="" />
               </a>
             </div>
             <img src={logo} alt="" className="logo" />
             <div>
-              <p className="address">г.Бишкек пр. Манаса 64/1</p>
-              <p className="text">График с 10:00 до 19:00</p>
+              <p className="address">г.Бишкек пр. Чуй 120</p>
+              <p className="text">3 этаж, 228 кабинет</p>
+              <p className="text">График {time.work_time}</p>
             </div>
           </div>
         </div>
