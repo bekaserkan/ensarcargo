@@ -92,6 +92,7 @@ const Dashboard = () => {
                 <div className="login_form_head">
                   <span className="text_first">Адреса</span>
                 </div>
+
                 <div className="input_box">
                   <label className="label_form">Почтовый индекс</label>
                   <input
@@ -139,6 +140,66 @@ const Dashboard = () => {
                   >
                     <img src={copyImage} alt="" />
                   </span>
+                </div>
+              </form>
+            </div>
+            <div className="centering">
+              <form className="form">
+                <div className="login_form_head">
+                  <span className="text_first">Адреса</span>
+                </div>
+                <div className="input_box">
+                  <label className="label_form">Мой код</label>
+                  <input
+                    className="input_form"
+                    value={user.code}
+                    type="text"
+                    placeholder=""
+                    disabled={true}
+                  />
+                </div>
+                <div className="input_box">
+                  <label className="label_form">Почтовый индекс</label>
+                  <input
+                    className="input_form"
+                    value={"18160860859"}
+                    type="text"
+                    placeholder=""
+                    disabled={true}
+                  />
+                </div>
+                <div className="input_box">
+                  <label className="label_form">Город</label>
+                  <input
+                    className="input_form"
+                    value={"浙江省 金华市 义乌市"}
+                    type="text"
+                    placeholder=""
+                    disabled={true}
+                  />
+                </div>
+                <div className="input_box">
+                  <label className="label_form">Склад</label>
+                  <input
+                    className="input_form"
+                    value={"下湾2区 6栋7号 107仓库"}
+                    type="text"
+                    placeholder=""
+                    disabled={true}
+                  />
+                </div>
+                <div
+                  onClick={() =>
+                    copy(
+                      ` ${user.code} ` +
+                        " 18160860859  浙江省 金华市 义乌市  下湾2区 6栋7号 107仓库  " +
+                        ` ${user.code} ` +
+                        ` ${user.phone} `
+                    )
+                  }
+                  className="button_form"
+                >
+                  Скопировать все
                 </div>
               </form>
             </div>
